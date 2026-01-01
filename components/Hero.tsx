@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20 pb-8 md:pb-32">
+    <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-20 md:pt-20 pb-24 md:pb-32">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full opacity-50" />
@@ -14,7 +14,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-20 items-center">
 
           {/* Text Content */}
           <motion.div
@@ -36,27 +36,27 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="text-base md:text-xl lg:text-2xl text-gray-400 mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-base md:text-xl lg:text-2xl text-gray-400 mb-4 md:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               Machine Learning Researcher specializing in <span className="text-blue-400">Medical Imaging</span> and <span className="text-orange-400">Computer Vision</span>.
             </p>
 
-            <div className="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-12 justify-center lg:justify-start">
+            <div className="flex flex-nowrap gap-2 md:gap-4 mb-4 md:mb-12 justify-center lg:justify-start">
               <a
                 href="#publications"
-                className="group relative px-6 md:px-8 py-3 md:py-4 bg-blue-600 text-white font-bold rounded-none overflow-hidden text-sm md:text-base"
+                className="group relative px-4 md:px-8 py-2 md:py-4 bg-blue-600 text-white font-bold rounded-none overflow-hidden text-xs md:text-base whitespace-nowrap"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                <span className="relative flex items-center gap-2">
+                <span className="relative flex items-center gap-1 md:gap-2">
                   VIEW RESEARCH <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
                 </span>
               </a>
 
               <a
                 href="#contact"
-                className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-none overflow-hidden text-sm md:text-base"
+                className="group relative px-4 md:px-8 py-2 md:py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-none overflow-hidden text-xs md:text-base whitespace-nowrap"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                <span className="relative flex items-center gap-2">
+                <span className="relative flex items-center gap-1 md:gap-2">
                   CONTACT ME <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
                 </span>
               </a>
