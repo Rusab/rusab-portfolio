@@ -1,0 +1,59 @@
+﻿
+> ml-researcher-portfolio@0.1.0 lint
+> eslint
+
+
+E:\Code Works\RusabSarmun_Portfolio\ml-researcher-portfolio\components\Achievements.tsx
+  56:76  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+E:\Code Works\RusabSarmun_Portfolio\ml-researcher-portfolio\components\Contact.tsx
+  44:76  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+E:\Code Works\RusabSarmun_Portfolio\ml-researcher-portfolio\components\Navigation.tsx
+   4:55  warning  'Moon' is defined but never used                @typescript-eslint/no-unused-vars
+   4:61  warning  'Sun' is defined but never used                 @typescript-eslint/no-unused-vars
+   5:18  warning  'AnimatePresence' is defined but never used     @typescript-eslint/no-unused-vars
+   6:8   warning  'Link' is defined but never used                @typescript-eslint/no-unused-vars
+  10:10  warning  'isDark' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  10:18  warning  'setIsDark' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+E:\Code Works\RusabSarmun_Portfolio\ml-researcher-portfolio\components\NeuralBackground.tsx
+  25:9  warning  Compilation Skipped: Inline `class` declarations are not supported
+
+Move class declarations outside of components/hooks.
+
+E:\Code Works\RusabSarmun_Portfolio\ml-researcher-portfolio\components\NeuralBackground.tsx:25:9
+  23 |         const connectionDistance = 150;
+  24 |
+> 25 |         class Particle {
+     |         ^^^^^^^^^^^^^^^^
+> 26 |             x: number;
+     | ^^^^^^^^^^^^^^^^^^^^^^
+> 27 |             y: number;
+     ΓÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^
+> 54 |             }
+     | ^^^^^^^^^^^^^^^^^^^^^^
+> 55 |         }
+     | ^^^^^^^^^^ Inline `class` declarations are not supported
+  56 |
+  57 |         for (let i = 0; i < particleCount; i++) {
+  58 |             particles.push(new Particle());
+
+  react-hooks/unsupported-syntax
+
+E:\Code Works\RusabSarmun_Portfolio\ml-researcher-portfolio\components\Publications.tsx
+   24:9   error    'filtered' is never reassigned. Use 'const' instead                                                                                                                                                                                                                                      prefer-const
+   65:76  error    Comments inside children section of tag should be placed inside braces                                                                                                                                                                                                                   react/jsx-no-comment-textnodes
+  157:23  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  220:70  error    Comments inside children section of tag should be placed inside braces                                                                                                                                                                                                                   react/jsx-no-comment-textnodes
+
+E:\Code Works\RusabSarmun_Portfolio\ml-researcher-portfolio\components\ResearchInterests.tsx
+  64:76  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+E:\Code Works\RusabSarmun_Portfolio\ml-researcher-portfolio\components\Robotics.tsx
+  50:76  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+Γ£û 15 problems (7 errors, 8 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+
