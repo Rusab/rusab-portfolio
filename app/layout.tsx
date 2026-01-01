@@ -15,12 +15,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rusab Sarmun | Neural Architect",
+  title: "Rusab Sarmun | Portfolio",
   description: "Portfolio of Rusab Sarmun, Machine Learning Researcher specializing in medical image analysis, deep learning, and AI-driven healthcare solutions.",
   keywords: ["Machine Learning", "Deep Learning", "Medical Imaging", "AI Research", "Computer Vision", "Healthcare AI"],
   authors: [{ name: "Rusab Sarmun" }],
   openGraph: {
-    title: "Rusab Sarmun | Neural Architect",
+    title: "Rusab Sarmun | Portfolio",
     description: "Machine Learning Researcher specializing in medical image analysis and healthcare AI",
     type: "website",
   },

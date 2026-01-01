@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail, Twitter, Download } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, GraduationCap, BookOpen, Download } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Hero() {
@@ -66,8 +66,9 @@ export default function Hero() {
               {[
                 { icon: Github, href: "https://github.com" },
                 { icon: Linkedin, href: "https://linkedin.com" },
-                { icon: Twitter, href: "https://twitter.com" },
-                { icon: Mail, href: "mailto:contact@rusabsarmun.com" },
+                { icon: GraduationCap, href: "https://scholar.google.com/citations?user=qXl9BcAAAAAJ&hl=en" },
+                { icon: BookOpen, href: "https://www.researchgate.net/profile/Rusab-Sarmun" },
+                { icon: Mail, href: "mailto:rusabsarmun@gmail.com" },
                 { icon: Download, href: "/cv/Rusab_Sarmun_CV.pdf", download: true }
               ].map((social, i) => (
                 <a
