@@ -29,8 +29,7 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter mb-4 md:mb-6 leading-[0.9]">
-              RUSAB
-              <br />
+              RUSAB{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-400 to-white">
                 SARMUN
               </span>
