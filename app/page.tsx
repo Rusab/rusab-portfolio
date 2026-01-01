@@ -6,12 +6,12 @@ import Robotics from '@/components/Robotics';
 import Achievements from '@/components/Achievements';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import NeuralBackground from '@/components/NeuralBackground';
+import MatrixRain from '@/components/MatrixRain';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#050505] text-white relative">
-      <NeuralBackground />
+      <MatrixRain />
       <Navigation />
       <Hero />
       <Publications limit={3} />

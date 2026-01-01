@@ -98,7 +98,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/10 to-transparent h-[20%] animate-scan z-20 pointer-events-none" />
 
                 {/* Image */}
-                <div className="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-700 mix-blend-luminosity hover:mix-blend-normal">
+                <div className="relative w-full h-full">
                   <Image
                     src="/Rusab_Image.png"
                     alt="Rusab Sarmun"
@@ -106,8 +106,6 @@ export default function Hero() {
                     className="object-cover object-center"
                     priority
                   />
-                  {/* Overlay Tint */}
-                  <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay pointer-events-none" />
                 </div>
 
                 {/* Tech UI Elements */}
