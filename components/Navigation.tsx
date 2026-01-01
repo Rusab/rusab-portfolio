@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Home, BookOpen, Cpu, Trophy, Mail, FileText } from 'lucide-react';
+import { Home, BookOpen, Brain, Bot, Award, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -18,9 +18,9 @@ export default function Navigation() {
   const navItems = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Publications', href: '/publications', icon: BookOpen },
-    { name: 'Research', href: '/#research', icon: Cpu },
-    { name: 'Robotics', href: '/robotics', icon: Cpu },
-    { name: 'Achievements', href: '/achievements', icon: Trophy },
+    { name: 'Research', href: '/#research', icon: Brain },
+    { name: 'Robotics', href: '/robotics', icon: Bot },
+    { name: 'Achievements', href: '/achievements', icon: Award },
     { name: 'Contact', href: '/#contact', icon: Mail },
   ];
 
@@ -62,21 +62,6 @@ export default function Navigation() {
             </span>
           </div>
         ))}
-
-        <div className="w-px h-6 md:h-8 bg-white/10 mx-1 md:mx-2" />
-
-        <div className="relative group">
-          <a
-            href="/cv.pdf"
-            download
-            className="p-2 md:p-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all"
-          >
-            <FileText className="w-4 h-4 md:w-5 md:h-5" />
-          </a>
-          <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-black/80 border border-white/10 rounded text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            CV
-          </span>
-        </div>
       </motion.div>
     </div>
   );
