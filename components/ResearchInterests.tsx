@@ -1,9 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Eye, Activity, Database, Network, Cpu } from 'lucide-react';
 
 export default function ResearchInterests() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   const interests = [
     {
       title: 'Medical Image Analysis',
@@ -67,26 +70,32 @@ export default function ResearchInterests() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {interests.map((interest, index) => (
+          {interests.map((interest, index) => {
+            const isExpanded = expandedIndex === index;
+            return (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="holographic-card p-8 rounded-xl group"
+              className="holographic-card p-6 md:p-8 rounded-xl group md:cursor-default cursor-pointer"
+              onClick={() => setExpandedIndex(isExpanded ? null : index)}
             >
-              <div className={`w-14 h-14 rounded border border-white/10 ${interest.bg} flex items-center justify-center mb-6`}>
-                <interest.icon className={`w-7 h-7 ${interest.color}`} />
+              <div className="flex md:flex-col items-center md:items-start gap-4 md:gap-0">
+                <div className={`w-12 h-12 md:w-14 md:h-14 rounded border border-white/10 ${interest.bg} flex items-center justify-center shrink-0 md:mb-6`}>
+                  <interest.icon className={`w-6 h-6 md:w-7 md:h-7 ${interest.color}`} />
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-white md:mb-3 group-hover:text-blue-400 transition-colors flex-1 md:flex-none">
+                  {interest.title}
+                </h3>
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                {interest.title}
-              </h3>
-              <p className="text-gray-400 leading-relaxed text-sm">
+              <p className={`text-gray-400 leading-relaxed text-sm md:block mt-3 md:mt-0 ${isExpanded ? 'block' : 'hidden'}`}>
                 {interest.description}
               </p>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Technical Expertise */}

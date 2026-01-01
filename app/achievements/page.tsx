@@ -8,8 +8,8 @@ export default function AchievementsPage() {
   return (
     <div className="min-h-screen bg-[#050505] text-white">
       <Navigation />
-      <div className="pt-24">
-        <Achievements limit={0} />
+      <div className="pt-20 md:pt-24">
+        <Achievements />
       </div>
       <Footer />
     </div>

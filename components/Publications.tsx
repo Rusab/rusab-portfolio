@@ -15,6 +15,7 @@ export default function Publications({ limit }: PublicationsProps) {
   const [filter, setFilter] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('year'); // 'year' or 'citations'
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const years = useMemo(() => {
     const yearSet = new Set(publications.map(p => p.year));
@@ -75,19 +76,19 @@ export default function Publications({ limit }: PublicationsProps) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
+              className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-6 mb-8 md:mb-12"
             >
-              <div className="holographic-card p-6 rounded-xl text-center">
-                <div className="text-4xl font-bold text-blue-400 mb-2 font-mono">{totalPublications}</div>
-                <div className="text-gray-400 text-sm tracking-widest uppercase">Total Publications</div>
+              <div className="holographic-card p-3 md:p-6 rounded-xl text-center">
+                <div className="text-2xl md:text-4xl font-bold text-blue-400 mb-1 md:mb-2 font-mono">{totalPublications}</div>
+                <div className="text-gray-400 text-[10px] md:text-sm tracking-wider md:tracking-widest uppercase">Publications</div>
               </div>
-              <div className="holographic-card p-6 rounded-xl text-center">
-                <div className="text-4xl font-bold text-purple-400 mb-2 font-mono">{totalCitations}</div>
-                <div className="text-gray-400 text-sm tracking-widest uppercase">Total Citations</div>
+              <div className="holographic-card p-3 md:p-6 rounded-xl text-center">
+                <div className="text-2xl md:text-4xl font-bold text-purple-400 mb-1 md:mb-2 font-mono">{totalCitations}</div>
+                <div className="text-gray-400 text-[10px] md:text-sm tracking-wider md:tracking-widest uppercase">Citations</div>
               </div>
-              <div className="holographic-card p-6 rounded-xl text-center">
-                <div className="text-4xl font-bold text-cyan-400 mb-2 font-mono">{hIndex}</div>
-                <div className="text-gray-400 text-sm tracking-widest uppercase">h-index</div>
+              <div className="holographic-card p-3 md:p-6 rounded-xl text-center">
+                <div className="text-2xl md:text-4xl font-bold text-cyan-400 mb-1 md:mb-2 font-mono">{hIndex}</div>
+                <div className="text-gray-400 text-[10px] md:text-sm tracking-wider md:tracking-widest uppercase">h-index</div>
               </div>
             </motion.div>
 
@@ -139,11 +140,14 @@ export default function Publications({ limit }: PublicationsProps) {
 
         {/* Publications List */}
         <div className="space-y-4">
-            {displayedPublications.map((pub, index) => (
+            {displayedPublications.map((pub, index) => {
+              const isExpanded = limit ? expandedIndex === index : true;
+              return (
               <div
                 key={pub.title}
                 className="bg-[#0A0A0A]/80 backdrop-blur-xl border border-white/5 shadow-lg transition-all duration-300 p-6 md:p-8 rounded-xl group relative z-10 hover:border-blue-500/50"
                 style={{ boxShadow: '0 0 30px -10px rgba(59, 130, 246, 0.3)' }}
+                onClick={() => limit && setExpandedIndex(isExpanded ? null : index)}
               >
                 <div className="flex flex-col md:flex-row gap-6">
                   {pub.image && (
@@ -160,10 +164,10 @@ export default function Publications({ limit }: PublicationsProps) {
 
                   <div className="flex-1">
                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-3">
-                      <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-tight font-sans">
+                      <h3 className="text-xl md:text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-tight font-sans">
                         {pub.title}
                       </h3>
-                      <div className="flex items-center gap-3 shrink-0">
+                      <div className={`flex items-center gap-3 shrink-0 ${limit && !isExpanded ? 'md:flex' : 'flex'}`}>
                         {pub.quartile && (
                           <span className={`px-2 py-1 text-xs font-mono border ${pub.quartile === 'Q1'
                             ? 'bg-green-500/10 text-green-400 border-green-500/30'
@@ -178,41 +182,49 @@ export default function Publications({ limit }: PublicationsProps) {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-400 mb-4 font-mono">
-                      <Users className="w-4 h-4 text-blue-500" />
-                      {pub.authors.map((author, i) => (
-                        <span key={i} className={author.includes('Sarmun') ? 'text-white' : ''}>
-                          {author}{i < pub.authors.length - 1 ? ',' : ''}
-                        </span>
-                      ))}
-                    </div>
+                    {(isExpanded || !limit) && (
+                      <>
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-400 mb-4 font-mono">
+                          <Users className="w-4 h-4 text-blue-500" />
+                          {pub.authors.map((author, i) => (
+                            <span key={i} className={author.includes('Sarmun') ? 'text-white' : ''}>
+                              {author}{i < pub.authors.length - 1 ? ',' : ''}
+                            </span>
+                          ))}
+                        </div>
 
-                    <div className="flex flex-wrap items-center gap-6 text-sm">
-                      <div className="flex items-center gap-2 text-gray-300 font-medium">
-                        <BookOpen className="w-4 h-4 text-purple-500" />
-                        {pub.journal}
-                      </div>
-                      <div className="flex items-center gap-2 text-gray-400">
-                        <Quote className="w-4 h-4 text-orange-500" />
-                        {pub.citations} Citations
-                      </div>
-                    </div>
+                        <div className="flex flex-wrap items-center gap-6 text-sm">
+                          <div className="flex items-center gap-2 text-gray-300 font-medium">
+                            <BookOpen className="w-4 h-4 text-purple-500" />
+                            {pub.journal}
+                          </div>
+                          <div className="flex items-center gap-2 text-gray-400">
+                            <Quote className="w-4 h-4 text-orange-500" />
+                            {pub.citations} Citations
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
 
-                  <div className="flex md:flex-col justify-end gap-3 shrink-0">
-                    <a
-                      href={pub.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded border border-white/10 text-gray-400 hover:bg-blue-600 hover:text-white hover:border-blue-500 transition-all"
-                      title="View Paper"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
-                  </div>
+                  {(isExpanded || !limit) && (
+                    <div className="flex md:flex-col justify-end gap-3 shrink-0">
+                      <a
+                        href={pub.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded border border-white/10 text-gray-400 hover:bg-blue-600 hover:text-white hover:border-blue-500 transition-all"
+                        title="View Paper"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
-            ))}
+              );
+            })}
         </div>
 
         {filteredPublications.length === 0 && (
