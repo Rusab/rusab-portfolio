@@ -15,7 +15,7 @@ export default function Footer() {
           </div>
 
           <div className="text-gray-600 text-sm text-center md:text-right font-mono">
-            <p>&copy; {new Date().getFullYear()} Rusab Sarmun. All rights reserved.</p>
+            <p suppressHydrationWarning>&copy; {new Date().getFullYear()} Rusab Sarmun. All rights reserved.</p>
             <p className="mt-1">System Status: <span className="text-green-500">ONLINE</span></p>
           </div>
         </div>
