@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20 pb-8 md:pb-32">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full opacity-50" />
@@ -14,21 +14,21 @@ export default function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-center">
 
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="order-2 lg:order-1"
+            className="order-2 lg:order-1 text-center lg:text-left"
           >
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-4 md:mb-6 justify-center lg:justify-start">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-blue-400 font-mono text-sm tracking-wider">SYSTEM ONLINE</span>
+              <span className="text-blue-400 font-mono text-xs md:text-sm tracking-wider">SYSTEM ONLINE</span>
             </div>
 
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 leading-[0.9]">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter mb-4 md:mb-6 leading-[0.9]">
               RUSAB
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-400 to-white">
@@ -36,33 +36,33 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-lg leading-relaxed">
+            <p className="text-base md:text-xl lg:text-2xl text-gray-400 mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               Machine Learning Researcher specializing in <span className="text-blue-400">Medical Imaging</span> and <span className="text-orange-400">Computer Vision</span>.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-12 justify-center lg:justify-start">
               <a
                 href="#publications"
-                className="group relative px-8 py-4 bg-blue-600 text-white font-bold rounded-none overflow-hidden"
+                className="group relative px-6 md:px-8 py-3 md:py-4 bg-blue-600 text-white font-bold rounded-none overflow-hidden text-sm md:text-base"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 <span className="relative flex items-center gap-2">
-                  VIEW RESEARCH <ArrowRight className="w-4 h-4" />
+                  VIEW RESEARCH <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
                 </span>
               </a>
 
               <a
                 href="#contact"
-                className="group relative px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-none overflow-hidden"
+                className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-none overflow-hidden text-sm md:text-base"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 <span className="relative flex items-center gap-2">
-                  CONTACT ME <ArrowRight className="w-4 h-4" />
+                  CONTACT ME <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
                 </span>
               </a>
             </div>
 
-            <div className="flex gap-6">
+            <div className="flex gap-4 md:gap-6 justify-center lg:justify-start">
               {[
                 { icon: Github, href: "https://github.com" },
                 { icon: Linkedin, href: "https://linkedin.com" },
@@ -79,7 +79,7 @@ export default function Hero() {
                   {...(social.download ? { download: true } : {})}
                   className="text-gray-500 hover:text-blue-400 transition-colors"
                 >
-                  <social.icon className="w-6 h-6" />
+                  <social.icon className="w-5 h-5 md:w-6 md:h-6" />
                 </a>
               ))}
             </div>
@@ -92,7 +92,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.2 }}
             className="order-1 lg:order-2 relative"
           >
-            <div className="relative w-full aspect-[4/5] max-w-md mx-auto">
+            <div className="relative w-full aspect-[4/5] max-w-[200px] md:max-w-sm lg:max-w-md mx-auto">
               {/* Holographic Container */}
               <div className="absolute inset-0 border border-blue-500/30 rounded-lg overflow-hidden">
                 {/* Scanline Animation */}
