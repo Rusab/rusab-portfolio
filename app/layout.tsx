@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   keywords: [
     "Rusab Sarmun",
     "Machine Learning Researcher",
-    "AI Engineer",
+    "AI Researcher",
     "Medical Image Analysis",
     "Deep Learning",
     "Computer Vision",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     creator: "@rusabsarmun",
   },
   verification: {
-    google: "your-google-verification-code", // Replace with actual code from Google Search Console
+    google: "google-site-verification=HSl4oE7B-o4Kc7ir8VqN1c4m_bTorSyQM23D-20FPag", 
   },
   alternates: {
     canonical: "https://rusabsarmun.com",

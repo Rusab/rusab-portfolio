@@ -16,7 +16,7 @@ export default function StructuredData() {
     ],
     "alumniOf": {
       "@type": "Organization",
-      "name": "Qatar University"
+      "name": "University of Dhaka"
     },
     "knowsAbout": [
       "Machine Learning",
