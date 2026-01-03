@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rusab Sarmun | ML Researcher & AI Engineer",
+  title: "Rusab Sarmun | ML Researcher",
   description: "Portfolio of Rusab Sarmun, Machine Learning Researcher specializing in medical image analysis, deep learning, computer vision, and AI-driven healthcare solutions. Published researcher with expertise in TensorFlow, PyTorch, and medical imaging.",
   keywords: [
     "Rusab Sarmun",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://rusabsarmun.com",
-    title: "Rusab Sarmun | ML Researcher & AI Engineer",
+    title: "Rusab Sarmun | ML Researcher",
     description: "Machine Learning Researcher specializing in medical image analysis, deep learning, and AI-driven healthcare solutions. Published researcher with 20+ publications.",
-    siteName: "Rusab Sarmun Portfolio",
+    siteName: "Rusab Sarmun",
     images: [
       {
         url: "/Rusab_Image.png",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rusab Sarmun | ML Researcher & AI Engineer",
+    title: "Rusab Sarmun | ML Researcher",
     description: "Machine Learning Researcher specializing in medical image analysis and AI-driven healthcare solutions",
     images: ["/Rusab_Image.png"],
     creator: "@rusabsarmun",
